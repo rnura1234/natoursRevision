@@ -136,9 +136,6 @@
   },
   { "id": 9, "name": "my tours 1", "duration": "5", "difficulty": "easy" },
   { "id": 10, "name": "my tours 1", "duration": "5", "difficulty": "easy" },
-  { "id": 11, "name": "my tours 1", "duration": "5", "difficulty": "easy" },
-  { "id": 12, "name": "my tours 1", "duration": "5", "difficulty": "easy" },
-  { "id": 13, "name": "my tours 1", "duration": "5", "difficulty": "easy" },
-  { "id": 14, "name": "my tours 1", "duration": "5", "difficulty": "easy" },
-  { "id": 15, "name": "my tours 1", "duration": "5", "difficulty": "easy" }
+  { "id": 11 },
+  { "id": 12, "name": "sanjeev", "age": "25", "role": "manager" }
 ]

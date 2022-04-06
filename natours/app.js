@@ -1,15 +1,24 @@
 const express = require('express');
-const fs = require('fs');
+const morgan = require('morgan');
+
 const app = express();
-const port = 8000;
+const tourRouter = require('./routes/tourRouter');
+const userRouter = require('./routes/userRouter');
 
-app.get('/api/v1/', (req, res) => {
-  const tours = fs.readFile('../dev-data/data/tours.json');
-  res
-    .status(200)
-    .json({ message: 'success', result: tours.length, data: { tours: tours } });
+//MIDDLEWARE
+//BUILTIN MIDDLEWARE
+if (process.env.ENV_VARIABLE == 'development') {
+  app.use(morgan('dev'));
+}
+app.use(express.json());
+
+//APLICATION MIDDLEWARE
+app.use((req, res, next) => {
+  console.log('hello from the first midleware');
+  next();
 });
 
-app.listen(port, () => {
-  console.log(`app is running on port ${port}`);
-});
+//ROUTE
+app.use('/api/v1/tours', tourRouter);
+app.use('/api/v1/users', userRouter);
+module.exports = app;
